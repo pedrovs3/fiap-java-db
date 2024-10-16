@@ -15,15 +15,11 @@ public class RegisterNewAccountView {
 
             List<Client> clients = clientDao.getAll();
 
-            // Assuming that the first client is the one that we want to create an account for
-            Account account = new Account("123456", "Conta Corrente", 1000.0f, clients.get(0).getId());
+            Account account = new Account("123457", "Conta Poupança", 5000.0f, clients.get(1).getId());
 
             accountDao.insert(account);
         } catch (Exception e) {
             System.err.println("Erro inesperado: " + e.getMessage());
         }
-
     }
-
-
 }
