@@ -3,7 +3,6 @@ package dev.pedrovs.view;
 import dev.pedrovs.dao.ClientDao;
 import dev.pedrovs.model.Client;
 
-import java.sql.SQLException;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -18,8 +17,6 @@ public class GetUsersView {
             } else {
                 displayClients(clients);
             }
-        } catch (SQLException e) {
-            System.err.println("Erro ao acessar o banco de dados: " + e.getMessage());
         } catch (Exception e) {
             System.err.println("Erro inesperado: " + e.getMessage());
         }
