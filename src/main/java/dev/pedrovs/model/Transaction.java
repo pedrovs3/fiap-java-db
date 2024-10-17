@@ -11,6 +11,8 @@ public class Transaction {
     String accountId;
     String transactionTypeId;
 
+    private String transactionTypeName;
+
     public Transaction(String id, Float value, String type, LocalDate createdAt, String description, String accountId, String transactionTypeId) {
         this.id = id;
         this.value = value;
@@ -19,6 +21,18 @@ public class Transaction {
         this.description = description;
         this.accountId = accountId;
         this.transactionTypeId = transactionTypeId;
+    }
+
+    public Transaction(String id, Float value, String type, LocalDate createdAt, String description, String accountId, String transactionTypeId, String transactionTypeName) {
+        this.id = id;
+        this.value = value;
+        this.type = type;
+        this.createdAt = createdAt;
+        this.description = description;
+        this.accountId = accountId;
+        this.transactionTypeId = transactionTypeId;
+        this.transactionTypeName = transactionTypeName;
+
     }
 
     public Transaction(Float value, String type, String description, String accountId, String transactionTypeId) {
@@ -85,16 +99,23 @@ public class Transaction {
         this.transactionTypeId = transactionTypeId;
     }
 
+    public String getTransactionTypeName() {
+        return transactionTypeName;
+    }
+
+    public void setTransactionTypeName(String transactionTypeName) {
+        this.transactionTypeName = transactionTypeName;
+    }
+
     @Override
     public String toString() {
         return "Transaction{" +
                 "id='" + id + '\'' +
                 ", value=" + value +
                 ", type='" + type + '\'' +
-                ", createdAt=" + createdAt +
                 ", description='" + description + '\'' +
                 ", accountId='" + accountId + '\'' +
-                ", transactionTypeId='" + transactionTypeId + '\'' +
+                ", transactionTypeName='" + transactionTypeName + '\'' +
                 '}';
     }
 }
