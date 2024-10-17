@@ -35,7 +35,7 @@ public class ClientDao {
     }
 
     public List<Client> getAll() throws EntityNotFoundException {
-        String sql = "SELECT * FROM TB_CLIENTS";
+        String sql = "SELECT * FROM TB_CLIENTS ORDER BY CREATED_AT DESC";
         List<Client> clients = new ArrayList<>();
 
         try (Connection connection = ConnectionFactory.getInstance().getConnection();
